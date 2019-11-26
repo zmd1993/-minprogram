@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<view class="spinner" id="spinner" style='margin-top:300rpx;' wx:if="{{showLoading}}">
+    <view class="rect1"></view>
+    <view class="rect2"></view>
+    <view class="rect3"></view>
+    <view class="rect4"></view>
+    <view class="rect5"></view>
+</view>
+<view  wx:else>
+  <view class="final-level" wx:if="{{finalLevel}}">
+    <view class="fl-title">您已通关</view>
+    <view class="fl-subtitle">新关卡，敬请期待~</view>
+    <view class="fl-integral">共获得积分：{{userInfo.integral}}</view>
+    <view class="fl-integral-introduce">(积分可用于后续积分商品兑换，请耐心等待！)</view>
+    <view class="fl-continued">To Be Continued...</view>
+  </view>
+  <view class="container" style="width:100%;" wx:if="{{!finalLevel}}">
+    <view class="panel">
+      <view class="list">
+        <view class="item {{item.state==1?'right':''}}" wx:for="{{dataList}}" wx:key data-index="{{index}}" bindtap="choseThis">
+          <view class="block" wx:if="{{item.rightAnwser==1&&item.state==0&&item.type==1}}"></view>
+        </view>
+      </view>
+    </view>
+    <view class="tips">
+      <view class="title" wx:if="{{currentQuestion.descript.length!=0}}">提示：</view>
+      <view class="text-list">
+        <view class="{{index<showIndex?'':'text-mask'}}" wx:for="{{currentQuestion.descript}}" wx:key>{{index+1}}.{{item}}</view>
+      </view>
+      <view class="share" wx:if="{{currentQuestion.descript.length>1}}">
+        <text wx:if="{{countDonw>0}}">不知道答案？等一会吧</text>
+        <text wx:else>还不知道答案?求助好友吧！</text>
+        <text wx:if="{{countDonw>0}}"><text class="orange">{{countDonw}}s</text>后揭开线索</text>
+        <button class="share-button" open-type="share" wx:else>求助</button>
+      </view>
+      <view class="image-list" wx:if="{{currentQuestion.image!=''&&currentQuestion.image!=null}}">
+        <image mode="widthFix" src="{{currentQuestion.image}}"></image>
+      </view>
+    </view>
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{modalState!=0}}">
+      <view class="modal" wx:if="{{modalState==1}}">
+        <image class="state" mode="widthFix" src="cloud://mould-9rh88.6d6f-mould-9rh88-1300297912/modal/success.png"></image>
+        <text class="text">积分+{{config.successIntegral}}</text>
+        <image class="button" mode="widthFix" src="https://6d6f-mould-9rh88-1300297912.tcb.qcloud.la/modal/next_level.png?sign=2d5b7250c2c1cc03bf2a0d04fd3fed53&t=1572833093" bindtap="levelSuccess"></image>
+      </view>
+      <view class="modal" wx:if="{{modalState==2}}">
+        <image class="state" mode="widthFix" src="cloud://mould-9rh88.6d6f-mould-9rh88-1300297912/modal/fail.png"></image>
+        <text class="text">积分{{config.failIntegral}}</text>
+        <image class="button" mode="widthFix" src="https://6d6f-mould-9rh88-1300297912.tcb.qcloud.la/modal/come_agin.png?sign=fc64fdda17a0f581d29f3a786ec75b90&t=1572600235" bindtap="levelFail"></image>
+      </view>
+    </view>
+  </view>
+</view>

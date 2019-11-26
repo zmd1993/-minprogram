@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view class=""></view>
+  <image class="he" src="https://6d6f-mould-9rh88-1300297912.tcb.qcloud.la/he.png?sign=3caa7fef8493aae55a59af627c88def2&t=1572574834"></image>
+  <image class="he1" src="https://6d6f-mould-9rh88-1300297912.tcb.qcloud.la/he.png?sign=3caa7fef8493aae55a59af627c88def2&t=1572574834"></image>
+  <image class="he2" src="https://6d6f-mould-9rh88-1300297912.tcb.qcloud.la/he.png?sign=3caa7fef8493aae55a59af627c88def2&t=1572574834"></image>
+  <image class="bg" mode="widthFix" src="https://6d6f-mould-9rh88-1300297912.tcb.qcloud.la/index_bg.png?sign=c5f6c26988fced7f0a9af01443879db5&t=1572574195"></image>
+  <button open-type='getUserInfo' bindgetuserinfo="getUserInfo" hover-class="none" class="begin" wx:if="{{!hasLogin}}">
+    <view class="text">开始</view>
+    <image class="sun" src="https://6d6f-mould-9rh88-1300297912.tcb.qcloud.la/sun.png?sign=865bc3ccac8f34d002a1f911c2aa5398&t=1572574498"></image>
+  </button>
+  <view  class="begin" bindtap="goGame" wx:else>
+    <view class="text">开始</view>
+    <image class="sun" src="https://6d6f-mould-9rh88-1300297912.tcb.qcloud.la/sun.png?sign=865bc3ccac8f34d002a1f911c2aa5398&t=1572574498"></image>
+  </view>
+</view>
