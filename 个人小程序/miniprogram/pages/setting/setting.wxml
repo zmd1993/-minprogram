@@ -1,0 +1,13 @@
+<!--miniprogram/pages/setting/setting.wxml-->
+<view class='items' style='height:150rpx;'>
+  <text>用户头像</text>
+  <image class='avatarUrl' src='{{userInfo.avatarUrl}}'></image>
+</view>
+<view class='items'>
+  <text>用户名</text>
+  <text>{{userInfo.nickName}}</text>
+</view>
+<navigator hover-class='none' url='../setPassword/setPassword' class='items'>
+  <text>设置密码</text>
+  <image class='icon' src='cloud://hua-7e98f2.6875-hua-7e98f2/setting_right.png'></image>
+</navigator>

@@ -1,0 +1,27 @@
+<!--miniprogram/pages/my/my.wxml-->
+<view class='userInfo-box'>
+  <navigator hover-class='none' url='../start/start' class='userInfo'  wx:if="{{!hasOpenId}}">
+    <image src='cloud://hua-7e98f2.6875-hua-7e98f2/icon/user_default_image.png'></image>
+    <view class='middle'>
+      <view class='name' >用户登录</view>
+    </view>
+  </navigator>
+<!-- 用户已登录 -->
+  <view class='userInfo' wx:if="{{hasOpenId}}" >
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <view class='middle'>
+      <view class='name' >{{userInfo.nickName}}</view>
+      <view class='vip'>{{userInfo.mobile_no}}</view> 
+    </view>
+    <navigator hover-class='none' url='../setting/setting'><image class='right' src='cloud://hua-7e98f2.6875-hua-7e98f2/icon/setting.png'></image></navigator>
+  </view>
+</view>
+<view class='panel'>
+  <view class='title'>常用功能</view>
+  <view class='container'>
+    <view  class='item'  wx:for="{{operation}}" wx:key="key" data-index='{{index}}' bindtap='goChild'>
+      <image src='{{item.imageUrl}}'></image>
+      <text>{{item.text}}</text>
+    </view> 
+  </view>
+</view>

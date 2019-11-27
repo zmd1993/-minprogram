@@ -1,0 +1,12 @@
+<!--miniprogram/pages/start/start.wxml-->
+<view class='login-box' wx:if="{{!showLoading}}">
+  <image src='cloud://hua-7e98f2.6875-hua-7e98f2/icon/login-logo.png'></image>
+  <button open-type='getUserInfo' bindgetuserinfo="onGotUserInfo">点击登录</button>
+</view>
+<view class="spinner" wx:else>
+  <view class="rect1"></view>
+  <view class="rect2"></view>
+  <view class="rect3"></view>
+  <view class="rect4"></view>
+  <view class="rect5"></view>
+</view>

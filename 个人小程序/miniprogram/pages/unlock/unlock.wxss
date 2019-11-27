@@ -1,0 +1,98 @@
+/* miniprogram/pages/unlock/unlock.wxss */
+page{
+ 
+}
+.page{
+  width: 100vw;
+  height: 100vh;
+  background-color: #ff8c63;
+}
+.user-info{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100rpx;
+}
+.user-info image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.user-info text{
+  color: #fff;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.password-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120rpx;
+}
+.password-box .password{
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #835644;
+  border-radius: 50%;
+  margin: 0 10rpx;
+}
+.password-box .entered{
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 10rpx;
+  box-shadow: 0 0 20rpx #f4f4f4;
+}
+.wrong-times{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #f4f4f4;
+  margin-top: 40rpx;
+}
+
+/* 按钮 */
+.number-box{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+}
+.number-box view{
+  width: 249rpx;
+  height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+  font-size: 36rpx;
+  color: #474747;
+}
+.number-box view:nth-child(3n){
+  border-right: none;
+  width: 250rpx;
+}
+.number-box view:nth-child(10){
+  border-bottom: none;
+  font-size: 30rpx;
+}
+.number-box view:nth-child(11){
+  border-bottom: none;
+}
+.number-box view:nth-child(12){
+  border-bottom: none;
+  font-size: 30rpx;
+}
+.hover-class{
+  background:rgba(0, 0, 0, 0.1);
+}

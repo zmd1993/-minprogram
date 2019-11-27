@@ -1,0 +1,20 @@
+/* miniprogram/pages/start/start.wxss */
+.login-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-box image{
+  width: 128rpx;
+  height: 128rpx;
+  margin-top: 200rpx;
+}
+.login-box button{
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-top: 200rpx;
+  background-color: #d81e06;
+  color: #fff;
+}

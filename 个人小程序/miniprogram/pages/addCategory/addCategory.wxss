@@ -1,0 +1,61 @@
+/* miniprogram/pages/addCategory/addCategory.wxss */
+.lable{
+  width: 710rpx;
+  margin-left: 20rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #474747;
+}
+input{
+  width: 670rpx;
+  padding: 0 20rpx;
+  margin-left: 20rpx;
+  border: 1rpx solid #f4f4f4;
+  font-size: 28rpx;
+  color: #474747;
+  height: 90rpx;
+}
+.placeholder-class{
+  font-size: 28rpx;
+  color: #dbdbdb;
+}
+.button ,.button-forbidden{
+  margin-top:120rpx;
+  width: 710rpx;
+  margin-left: 20rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #67CF22;
+  border: 1rpx solid #67CF22;
+  border-radius: 8rpx;
+}
+.image-box{
+  width: 720rpx;
+  margin: 15rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.image-box .image-out{
+  width: 112rpx;
+  height: 112rpx;
+  border: 4rpx solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-box .active{
+  border: 4rpx solid #CDB38B !important;
+}
+.image-box .image-out image{
+  width: 80rpx;
+  height: 80rpx;
+}

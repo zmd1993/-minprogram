@@ -1,0 +1,56 @@
+<!--miniprogram/pages/addCount/addCount.wxml-->
+<view class='panel'>
+  <view class='title'>添加账号</view>
+  <view class='lable-input' bindtap='pickerChange'>
+    <view class='lable'>选择类型</view>
+    <view class='input'>{{pickerData[pickerDataIndex]}}</view>
+    <image class='icon' src='cloud://hua-7e98f2.6875-hua-7e98f2/bottom.png'></image>
+    <view class='picker' wx:if="{{showPicker}}">
+      <view class='picker-item' wx:for="{{pickerData}}" wx:key="key" data-index="{{index}}" catchtap='chosePicker'>{{item}}</view>
+    </view>
+  </view>
+   <view class='lable-input'>
+    <view class='lable'>账号</view>
+    <input class='input' bindinput='inputAccount' placeholder='请输入账号' placeholder-class='placeholder-classs' bindinput='inputAccount'></input>
+  </view>
+   <view class='lable-input'>
+    <view class='lable'>密码</view>
+    <input class='input' type='password' bindinput='inputPassword'  placeholder='请输入密码' placeholder-class='placeholder-classs' bindinput='inputPassword'></input>
+  </view>
+  <view class='ex'>
+    <view class='sub-title'>添加账号绑定账号</view>
+    <view class='lable-input'>
+      <view class='lable'>绑定账号</view>
+      <input class='input'  bindinput='inputBindAccount' value='{{bindAccount}}'  placeholder='请输入绑定账号' placeholder-class='placeholder-classs'></input>
+    </view>
+    <view class='lable-input'>
+      <view class='lable'>绑定大区</view>
+      <input class='input'  bindinput='inputBindRegion' value='{{bindRegion}}'  placeholder='请输入绑定大区' placeholder-class='placeholder-classs' ></input>
+    </view>
+    <view class='remark'>
+      <textarea placeholder='请输入备注信息' placeholder-class='placeholder-classs' bindinput='inputRemark' value='{{remarkValue}}'></textarea>
+    </view>
+    <view class='add-more' bindtap='addBindAccount' wx:if="{{showAdd1}}">
+      <view class='inside'>
+        <image src='cloud://hua-7e98f2.6875-hua-7e98f2/icon/add_more1.png'></image>保存并继续添加绑定账号
+      </view>
+    </view>
+    <view class='add-more' wx:else>
+      <view class='inside'>
+        <image class='trunAround' src='cloud://hua-7e98f2.6875-hua-7e98f2/icon/loading_white.png'></image>保存中
+      </view>
+    </view>
+    <view class='ex' wx:if="{{bindData.lenght!=0&&bindData!=''}}">
+      <view class='sub-title'>已添加账号</view>
+      <view class='item' wx:for="{{bindData}}" wx:key="key">
+        <view>账号：{{item.bindAccount}}</view>
+        <view>大区：{{item.bindRegion}}</view>
+        <view >备注：{{item.remarkValue}}</view>
+      </view>
+    </view>
+  </view>
+  
+</view>
+<view class='bottom-fixed'>
+  <view class='button' hover-class='botton-hover' bindtap='submit'>确定</view>
+</view>

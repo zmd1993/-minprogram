@@ -1,0 +1,34 @@
+/* miniprogram/pages/setting/setting.wxss */
+page{
+  background-color: #f4f4f4;
+}
+.items{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.items:last-child{
+  border-bottom: none;
+}
+.items .avatarUrl{
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 20rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.items text{
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #474747;
+  margin-right: 20rpx;
+}
+.items .icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,33 @@
+<!--miniprogram/pages/accountList/accountList.wxml-->
+<view class='panel' wx:for="{{dataList}}" wx:key="key">
+  <view class='title'>
+    <image src='{{item.accountIcon}}'></image>
+    <view class='account'>
+      <view class='a'>{{item.account}}</view>
+      <view class='p'>
+        <text wx:if="{{item.showPassword}}">{{item.password}}</text>
+        <text wx:else><block wx:for="{{item.password}}">*</block></text>
+        <image data-index='{{index}}' bindtap='switchPassword' src='{{item.showPassword?"cloud://hua-7e98f2.6875-hua-7e98f2/icon/showPassword.png":"cloud://hua-7e98f2.6875-hua-7e98f2/icon/hiddenPassword.png"}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='show-more  {{item.showMore?"":"show-more-ex"}}' wx:if="{{!item.showMore}}" data-index="{{index}}" bindtap='showMore'>显示更多<image src=''></image></view>
+  <view class='container' wx:else>
+    <view class='item' wx:for="{{item.bindData}}" wx:key="key" wx:for-item="items">
+      <view class='line'>
+        <view class='left'>账号：</view>
+        <view class='right'>{{items.bindAccount}}</view>
+      </view>
+      <view class='line'>
+        <view class='left'>大区：</view>
+        <view class='right'>{{items.bindRegion}}</view>
+      </view>
+      <view class='add'>
+        <view class='left'>更多：</view>
+        <view class='right'>{{items.remarkValue}}</view>
+        <view class='copy' hover-class='hover' data-text='{{items.remarkValue}}' bindtap='copy'>复制</view>
+      </view>
+    </view>
+    <view class='show-more' wx:if="{{item.showMore}}" data-index="{{index}}" bindtap='showMore' >隐藏<image src=''></image></view>
+  </view>
+</view>

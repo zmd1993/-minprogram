@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="search">
+  <image src="cloud://hua-7e98f2.6875-hua-7e98f2-1259001707/newIcon/search.png"></image>
+  <input placeholder="输入搜索内容"></input>
+</view>
+<view class="panel">
+  <view class="p-item no-padding" wx:for="{{navBar}}" wx:key>
+    <image src="{{item.icon}}"></image>
+    <text>{{item.text}}</text>
+  </view>
+</view>
+<view class="panel">
+  <view class="p-item" wx:for="{{navList}}" wx:key="key">
+    <image src="{{item.icon}}"></image>
+    <text>{{item.category}}</text>
+  </view>
+</view>
+<view class="panel">
+  <view class="l-item">
+    <image src="cloud://hua-7e98f2.6875-hua-7e98f2/icon/QQ.png"></image>
+    <view class="l-right">
+      <view class="title">QQ号</view>
+      <view class="sub-title">包括QQ号绑定的各大网站账号密码。</view>
+      <view class="footer">
+        <text>总查看次数：9次</text>
+      </view>
+    </view>
+  </view>
+</view>
